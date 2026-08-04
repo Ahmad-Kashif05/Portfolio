@@ -1,0 +1,113 @@
+.services {
+  padding: var(--section-py) var(--section-px);
+  background: var(--color-primary-700);
+}
+
+.heading {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+}
+
+.heading span {
+  color: var(--color-accent);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: var(--fs-small);
+}
+
+.heading h2 {
+  font-size: var(--fs-h2);
+  color: var(--color-text-on-dark);
+  margin: 15px 0;
+}
+
+.heading p {
+  color: var(--color-text-on-dark-body);
+  line-height: 1.8;
+  font-size: var(--fs-body);
+}
+
+.grid {
+  margin-top: var(--section-gap-top);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: var(--space-6);
+}
+
+.card {
+  background: var(--color-primary-500);
+  border: 1px solid var(--color-border-on-dark);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 1.2rem + 1.2vw, 2.2rem) clamp(1.25rem, 1rem + 1vw, 1.9rem);
+  transition: transform var(--transition-slow), border-color var(--transition-slow), box-shadow var(--transition-slow);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transition: transform var(--transition-slow);
+}
+
+.card:hover::before,
+.card:focus-within::before {
+  transform: scaleX(1);
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-10px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-dark-md);
+}
+
+.icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(255, 209, 102, 0.12);
+  color: var(--color-accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  margin-bottom: 22px;
+  transition: transform var(--transition-slow), background var(--transition-slow), color var(--transition-slow);
+}
+
+.card:hover .icon,
+.card:focus-within .icon {
+  transform: rotate(8deg) scale(1.08);
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.card h3 {
+  color: var(--color-text-on-dark);
+  margin-bottom: 12px;
+  font-size: var(--fs-h3);
+}
+
+.card p {
+  color: var(--color-text-on-dark-body);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+/* ---------- Mobile fine-tuning ---------- */
+@media (max-width: 375px) {
+  .icon {
+    width: 58px;
+    height: 58px;
+    font-size: 24px;
+  }
+}
