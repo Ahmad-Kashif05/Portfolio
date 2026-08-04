@@ -2,7 +2,7 @@ import styles from "./Education.module.css";
 
 const EducationData = [
   {
-    year: "2025 - Present",
+    year: "2026 - Present",
     title: "BS Computer Science",
     company: "Government Graduate College",
     description:
