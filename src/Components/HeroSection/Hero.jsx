@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Hero.module.css";
-import heroPic from "./heroPic.png";
+import heroPic from "./heroPic.webp";
 
 function Hero() {
   return (
