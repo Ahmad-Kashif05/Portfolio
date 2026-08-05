@@ -15,6 +15,8 @@ const PROJECTS = [
     description:
       "A responsive Tic Tac Toe game built with React featuring interactive gameplay and clean UI.",
     stack: "HTML • CSS • JavaScript",
+    live: "https://ahmad-kashif05.github.io/TIC-TAC-TOE/",
+    github: "https://github.com/Ahmad-Kashif05/TIC-TAC-TOE"
   },
   {
     title: "Stone Paper Scissors",
@@ -22,6 +24,8 @@ const PROJECTS = [
     description:
       "A fun game built using JavaScript with score tracking and responsive design.",
     stack: "HTML • CSS • JavaScript",
+    live: "https://ahmad-kashif05.github.io/Stone-Paper-Scissor/",
+    github: "https://github.com/Ahmad-Kashif05/Stone-Paper-Scissor"
   },
   {
     title: "Analog Clock",
@@ -29,6 +33,8 @@ const PROJECTS = [
     description:
       "A real-time analog clock that updates every second using JavaScript.",
     stack: "HTML • CSS • JavaScript",
+    live: "https://ahmad-kashif05.github.io/AnalogueClock/",
+    github: "https://github.com/Ahmad-Kashif05/Stone-Paper-Scissor"
   },
   {
     title: "Brand Template",
@@ -36,6 +42,8 @@ const PROJECTS = [
     description:
       "A modern and fully responsive landing page template designed with clean UI principles.",
     stack: "HTML • CSS",
+    live: "https://ahmad-kashif05.github.io/Brand-Tour-Website/",
+    github: "https://github.com/Ahmad-Kashif05/Brand-Tour-Website"
   },
   {
     title: "Currency Converter",
@@ -43,6 +51,8 @@ const PROJECTS = [
     description:
       "Converts currencies in real-time using an API with a clean and responsive interface.",
     stack: "JavaScript • API • CSS • HTML",
+    live: "https://ahmad-kashif05.github.io/Currency-Converter/",
+    github: "https://github.com/Ahmad-Kashif05/Currency-Converter"
   },
   // GYM LIFE STYLE Project
   // {
@@ -51,13 +61,17 @@ const PROJECTS = [
   //   description: 
   //     "A responsive fitness website designed to showcase gym services, workout programs, trainers, and membership plans with a modern ",
   //   stack: "HTML • CSS • JavaScript"
+  //   live: "https://ahmad-kashif05.github.io/Gym-Life-Style/",
+  //   github: "https://github.com/Ahmad-Kashif05/Gym-Life-Style"
   // }
   {
     title: "Crafto – IT Business Agency Website",
     image: ICTI,
     description:
       "Responsive IT business agency website with a modern and clean UI.",
-    stack: "HTML5 • CSS3 • Responsive Design"
+    stack: "HTML5 • CSS3 • Responsive Design",
+    live: "https://ahmad-kashif05.github.io/Crafto-IT-Business-Agency/",
+    github: "https://github.com/Ahmad-Kashif05/Crafto-IT-Business-Agency"
   }
 ];
 
@@ -85,13 +99,28 @@ function Projects() {
 
             <span>{project.stack}</span>
 
-            <div className={styles.buttons}>
-              <button type="button" aria-label={`View live demo of ${project.title}`}>
-                Live Demo
-              </button>
-              <button type="button" aria-label={`View ${project.title} source code on GitHub`}>
-                GitHub
-              </button>
+              <div className={styles.buttons}>
+                 {/* <button type="button" aria-label={`View live demo of ${project.title}`}>
+                   Live Demo
+                 </button>
+                 <button type="button" aria-label={`View ${project.title} source code on GitHub`}>
+                   GitHub
+                 </button> */}
+                 <a 
+                   href={project.live}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                 >
+                   Live Demo
+                 </a>
+
+                 <a 
+                   href={project.github}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                 >
+                   GitHub
+                 </a>
             </div>
           </article>
         ))}
