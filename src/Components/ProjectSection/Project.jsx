@@ -6,6 +6,7 @@ import ACI from "../../assets/AC.webp"
 import CBI from "../../assets/CB.webp"
 import CCI from "../../assets/CC.webp"
 import GLSI from "../../assets/GLS.webp"
+import ICTI from "../../assets/ICT.webp"
 
 const PROJECTS = [
   {
@@ -43,12 +44,20 @@ const PROJECTS = [
       "Converts currencies in real-time using an API with a clean and responsive interface.",
     stack: "JavaScript • API • CSS • HTML",
   },
+  // GYM LIFE STYLE Project
+  // {
+  //   title: "GYM Life Style",
+  //   image: GLSI,
+  //   description: 
+  //     "A responsive fitness website designed to showcase gym services, workout programs, trainers, and membership plans with a modern ",
+  //   stack: "HTML • CSS • JavaScript"
+  // }
   {
-    title: "GYM Life Style",
-    image: GLSI,
-    description: 
-      "A responsive fitness website designed to showcase gym services, workout programs, trainers, and membership plans with a modern ",
-    stack: "HTML • CSS • JavaScript"
+    title: "Crafto – IT Business Agency Website",
+    image: ICTI,
+    description:
+      "Responsive IT business agency website with a modern and clean UI.",
+    stack: "HTML5 • CSS3 • Responsive Design"
   }
 ];
 

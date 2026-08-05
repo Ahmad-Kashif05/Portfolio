@@ -35,7 +35,9 @@
   border: 1px solid var(--color-border);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
-
+.image{
+  border-radius: 1rem;
+}
 .card:hover,
 .card:focus-within {
   transform: translateY(-10px);
