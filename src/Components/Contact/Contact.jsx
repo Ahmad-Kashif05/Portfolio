@@ -1,4 +1,7 @@
 import styles from "./Contact.module.css";
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
+
 
 import {
   FaEnvelope,
@@ -9,6 +12,50 @@ import {
 } from "react-icons/fa";
 
 function Contact() {
+    const form = useRef();
+    const [status, setStatus] = useState("");
+    const sendEmail = (e) => {
+  e.preventDefault();
+
+  const formData = {
+    from_name: form.current.from_name.value,
+    from_email: form.current.from_email.value,
+    message: form.current.message.value,
+  };
+
+  // Send message to you
+  emailjs
+    .sendForm(
+      "service_pm5r45s",
+      "template_9ywis1s",
+      form.current,
+      {
+        publicKey: "M1NpeKttLOyPZ7l1y",
+      }
+    )
+    .then(() => {
+      
+      // Auto reply to visitor
+      emailjs.send(
+        "service_pm5r45s",
+        "template_h3bzu3q",
+        formData,
+        {
+          publicKey: "M1NpeKttLOyPZ7l1y",
+        }
+      );
+
+      setStatus("Message sent successfully!");
+      form.current.reset();
+
+    })
+    .catch(() => {
+      setStatus("Something went wrong. Please try again.");
+    });
+
+};
+
+
   return (
     <section className={styles.contact} id="contact" data-theme="dark">
       <div className={styles.heading}>
@@ -64,12 +111,12 @@ function Contact() {
 
         {/* Right */}
 
-        <form className={styles.form}>
+       <form ref={form} className={styles.form} onSubmit={sendEmail}>
           <label className="srOnly" htmlFor="contact-name">Your Name</label>
-          <input id="contact-name" name="name" type="text" placeholder="Your Name" autoComplete="name" required />
+          <input id="contact-name" name="from_name" type="text" placeholder="Your Name" autoComplete="name" required />
 
           <label className="srOnly" htmlFor="contact-email">Your Email</label>
-          <input id="contact-email" name="email" type="email" placeholder="Your Email" autoComplete="email" required />
+          <input id="contact-email" name="from_email" type="email" placeholder="Your Email" autoComplete="email" required />
 
           <label className="srOnly" htmlFor="contact-subject">Subject</label>
           <input id="contact-subject" name="subject" type="text" placeholder="Subject" />
@@ -78,6 +125,8 @@ function Contact() {
           <textarea id="contact-message" name="message" rows="6" placeholder="Write your message" required></textarea>
 
           <button type="submit">Send Message</button>
+          {status && <p className={styles.status}>{status}</p>}
+
         </form>
       </div>
     </section>
